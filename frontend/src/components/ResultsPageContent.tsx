@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link, Outlet } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 const Content = styled.div`
@@ -119,6 +119,7 @@ function ResultsPageContent() {
   }, [sortOrder])
 
   return (
+    <>
     <Content>
       <TopContent>
         <H1>{products?.length > 0 && search !== ""? `SHOWING RESULTS FOR "${search?.toLocaleUpperCase()}" (${products?.length})` : `NO RESULTS FOUND FOR "${search?.toLocaleUpperCase()}"`}</H1>
@@ -129,13 +130,15 @@ function ResultsPageContent() {
       </TopContent>
       <Shoes>{products.map((product) => 
       <ShoeItem key={product.product_id}>
-      <Img src={product.image_url}></Img>
+      <Link to={`/product/${product.product_id}/${product.name}`}><Img src={product.image_url}></Img></Link>
       <H2>{product.brand}</H2>
       <H3>{product.name}</H3>
       <H4>{product.price} kr</H4>
       </ShoeItem>
       )}</Shoes>
     </Content>
+    <Outlet />
+    </>
   )
 }
 

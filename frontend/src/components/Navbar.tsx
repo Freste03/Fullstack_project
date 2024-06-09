@@ -4,10 +4,10 @@ import SearchBar from './SearchBar';
 
 
 
-/* import {
+import {
   Link,
   Outlet
-} from 'react-router-dom' */
+} from 'react-router-dom'
 
 const Content = styled.div`
   position: fixed;
@@ -91,31 +91,30 @@ function Navbar() {
 
 
   return (
+    <>
     <Content>
     <Header>
       <Nav>
-        <ImgLink><IMG src={logo} alt='Sneakers-experten logo'></IMG></ImgLink>
+        <ImgLink><Link to='/'><IMG src={logo} alt='Sneakers-experten logo'></IMG></Link></ImgLink>
         <SearchBar />
-        <A><Svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"/>          </Svg>
-        </A>
-        <A><Svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
+        <Link to='/cart'><Svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
-        </Svg>
-        </A>
+        </Svg></Link>
       </Nav>
     </Header>
     <SecondNav>
-      <A><P>NIKE</P></A>
-      <A><P>ADIDAS</P></A>
-      <A><P>VANS</P></A>
-      <A><P>PUMA</P></A>
-      <A><P>NEW BALANCE</P></A>
-      <A><P>REEBOOK</P></A>
-      <A><P>JORDAN</P></A>
-      <A><P>YEEZY</P></A>
+      <Link to='/brand/nike'><A><P>NIKE</P></A></Link>
+      <Link to='/brand/adidas'><A><P>ADIDAS</P></A></Link>
+      <Link to='/brand/vans'><A><P>VANS</P></A></Link>
+      <Link to='/brand/puma'><A><P>PUMA</P></A></Link>
+      <Link to='/brand/new balance'><A><P>NEW BALANCE</P></A></Link>
+      <Link to='/brand/reebook'><A><P>REEBOOK</P></A></Link>
+      <Link to='/brand/jordan'><A><P>JORDAN</P></A></Link>
+      <Link to='/brand/yeezy'><A><P>YEEZY</P></A></Link>
     </SecondNav>
     </Content>
+    <Outlet />
+    </>
   )
 }
 

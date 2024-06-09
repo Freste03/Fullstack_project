@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import airforce1 from '../assets/airforce1.jpg'
 import airforce12 from '../assets/airforce12.jpg'
 import airforce13 from '../assets/airforce13.jpg'
+import { useNavigate } from 'react-router-dom'
 
 
 const Content = styled.div`
@@ -56,6 +57,8 @@ transition: all 0.3s ease;
 `
 
 function SportShoes() {
+
+  const navigate = useNavigate()
   return (
     <Content>
       <IMG src={airforce1}></IMG>
@@ -63,7 +66,7 @@ function SportShoes() {
       <Text>
         <H1>Nike Air Force 1</H1>
         <H2>The perfect sneakers for the summer</H2>
-        <Button>SHOP NOW</Button>
+        <Button onClick={() => navigate('/brand/Nike')}>SHOP NOW</Button>
       </Text>
       <IMG src={airforce13}></IMG>
     </Content>

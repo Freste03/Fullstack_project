@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import yeezy from '../assets/yeezy.jpg'
+import { useNavigate } from 'react-router-dom'
 
 const Main = styled.div`
   width: 100vw;
@@ -54,6 +55,8 @@ const Button = styled.button`
 `
 
 function HeroImage() {
+
+  const navigate = useNavigate()
   return (
     <>
     <Main>
@@ -61,7 +64,7 @@ function HeroImage() {
       <H1>YEEZY</H1>
       <H2>Brand new drop</H2>
       <P>Explore the iconic Yeezy sneakers, known for their quality and design.  Featuring unique designs like the Boost 350 and 700.</P>
-      <Button>SHOP NOW</Button>
+      <Button onClick={() => navigate('/brand/Yeezy')}>SHOP NOW</Button>
     </Content>
     </Main>
     </>
