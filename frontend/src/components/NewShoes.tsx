@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { Link, Outlet} from 'react-router-dom'
 
 const Content = styled.div`
   margin-top: 4rem;
   margin-left: 4rem;
-  width: 100%;
 `
 
 const H1 = styled.h1`
@@ -31,14 +31,14 @@ const H4 = styled.h4`
 const Shoes = styled.div`
   display: flex;
   margin-top: 2rem;
-  
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
+  width: 100%;
 `
 
 const Img = styled.img`
-  width: 400px;
-  height: 400px;
+  width: 450px;
+  height: 450px;
   border: 1px solid black;
 `
 
@@ -75,13 +75,16 @@ function NewShoes() {
       <H1>NEW ARRIVALS</H1>
       <Shoes>{products.slice(0, 6).map((product) => 
       <ShoeItem key={product.product_id}>
+      <Link to={`/product/${product.product_id}/${product.name}`}>
       <Img src={product.image_url}></Img>
+      </Link>
       <H2>{product.brand}</H2>
       <H3>{product.name}</H3>
       <H4>{product.price} kr</H4>
       </ShoeItem>
       )}</Shoes>
     </Content>
+    <Outlet />
     </>
   )
 }

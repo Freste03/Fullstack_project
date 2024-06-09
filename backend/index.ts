@@ -34,6 +34,38 @@ app.get('/sortbydateproducts', (req, res) => {
     })
 })
 
+app.get('/search', (req, res) => {
+    const searchQuery = req.query.search;
+
+    db.all('SELECT * FROM Products WHERE name LIKE ?', [`%${searchQuery}%`], (err, rows) => {
+        if (err) {
+            console.error(err.message);
+            res.status(500).send('Internal server error');
+            return;
+        } else {
+            res.json(rows);
+        }
+    })
+})
+
+app.get('/product/:id/:name', (req, res) => {
+    const productId = req.params.id;
+    const productName = req.params.name;
+    db.all('SELECT * FROM Products WHERE product_id = ? AND name = ?', [productId, productName], (err, rows) => {
+        if (err) {
+            console.error(err.message);
+            res.status(500).send('Internal server error');
+            return;
+        } else {
+            res.json(rows);
+        }
+    })
+})
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(path.resolve(), 'dist', 'index.html'));
+});
+
 const PORT = process.env.PORT || 3000
 
 app.listen(PORT, () => {

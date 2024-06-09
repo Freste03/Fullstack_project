@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import logo from '../assets/sneakers-experten_logo.png'
+import SearchBar from './SearchBar';
 
 
 
@@ -47,7 +48,7 @@ const IMG = styled.img`
 const Svg = styled.svg`
   margin: 0 0.5rem;
   transition: color 0.3s ease-in-out;
-  
+  color: #FFFFFF;
   &:hover {
     color: #FF4545;
   }
@@ -84,16 +85,17 @@ const P = styled.p`
   }
 `
 
+
 function Navbar() {
+
+
+
   return (
     <Content>
     <Header>
       <Nav>
         <ImgLink><IMG src={logo} alt='Sneakers-experten logo'></IMG></ImgLink>
-        <A><Svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
-        <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"/>
-        </Svg>
-        </A>
+        <SearchBar />
         <A><Svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12.01 6.001C6.5 1 1 8 5.782 13.001L12.011 20l6.23-7C23 8 17.5 1 12.01 6.002Z"/>          </Svg>
         </A>
