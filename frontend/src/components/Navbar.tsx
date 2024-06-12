@@ -30,12 +30,6 @@ const Nav = styled.nav`
   width: 100%;
 `
 
-const A = styled.a`
-    text-decoration: none;
-    color: #FFFFFF;
-    cursor: pointer;
-`
-
 const ImgLink = styled.a`
   flex-grow: 1;
 `
@@ -85,6 +79,11 @@ const P = styled.p`
   }
 `
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: #FFFFFF;
+`
+
 
 function Navbar() {
 
@@ -103,14 +102,14 @@ function Navbar() {
       </Nav>
     </Header>
     <SecondNav>
-      <Link to='/brand/nike'><A><P>NIKE</P></A></Link>
-      <Link to='/brand/adidas'><A><P>ADIDAS</P></A></Link>
-      <Link to='/brand/vans'><A><P>VANS</P></A></Link>
-      <Link to='/brand/puma'><A><P>PUMA</P></A></Link>
-      <Link to='/brand/new balance'><A><P>NEW BALANCE</P></A></Link>
-      <Link to='/brand/reebook'><A><P>REEBOOK</P></A></Link>
-      <Link to='/brand/jordan'><A><P>JORDAN</P></A></Link>
-      <Link to='/brand/yeezy'><A><P>YEEZY</P></A></Link>
+      <StyledLink to='/brand/nike'><P>NIKE</P></StyledLink>
+      <StyledLink to='/brand/adidas'><P>ADIDAS</P></StyledLink>
+      <StyledLink to='/brand/vans'><P>VANS</P></StyledLink>
+      <StyledLink to='/brand/puma'><P>PUMA</P></StyledLink>
+      <StyledLink to='/brand/new balance'><P>NEW BALANCE</P></StyledLink>
+      <StyledLink to='/brand/reebook'><P>REEBOOK</P></StyledLink>
+      <StyledLink to='/brand/jordan'><P>JORDAN</P></StyledLink>
+      <StyledLink to='/brand/yeezy'><P>YEEZY</P></StyledLink>
     </SecondNav>
     </Content>
     <Outlet />

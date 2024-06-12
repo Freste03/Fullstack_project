@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 
 
 const Content = styled.div`
-    min-height: 80vh;
+    
     margin-top: 180px;
     display: flex;
     justify-content: center;
@@ -64,11 +64,16 @@ const Button = styled.button`
     width: 100%;
     background-color: black;
     color: white;
-    border: none;
+    border: 1px solid black;
     padding: 1rem 0;
     font-weight: bold;
     cursor: pointer;
     margin-top: 0.5rem;
+    transition: all 0.3s ease;
+    &:hover {
+        background-color: white;
+        color: black;
+    }
 `
 
 function ProductPageContent() {
@@ -98,6 +103,10 @@ function ProductPageContent() {
           .then(res => res.json())
           .then(data => setProduct(data))
           .catch(err => console.error("Error fetching products", err))
+      }, [id, name])
+
+      useEffect(() => {
+        window.scrollTo(0, 0)
       }, [id, name])
 
       const addToCart = () => {

@@ -66,7 +66,7 @@ function SportShoes() {
       <Text>
         <H1>Nike Air Force 1</H1>
         <H2>The perfect sneakers for the summer</H2>
-        <Button onClick={() => navigate('/brand/Nike')}>SHOP NOW</Button>
+        <Button onClick={() => navigate("/product/3/Nike Air Force 1 '07")}>SHOP NOW</Button>
       </Text>
       <IMG src={airforce13}></IMG>
     </Content>

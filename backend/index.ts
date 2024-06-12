@@ -109,6 +109,18 @@ app.get('/cart', (req, res) => {
     })
 })
 
+app.delete('/cart/:id', (req, res) => {
+    const id = req.params.id;
+    db.run('DELETE FROM OrderItems WHERE id = ?', [id], (err) => {
+        if (err) {
+            console.error(err.message);
+            res.status(500).send('Internal server error');
+            return;
+        }
+        res.json({ message: 'Product removed from cart' });
+    });
+})
+
 app.get('/brand/:brand', (req, res) => {
     const brand = req.params.brand;
     db.all('SELECT * FROM Products WHERE brand = ?', [brand], (err, rows) => {
