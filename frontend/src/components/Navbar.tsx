@@ -80,8 +80,8 @@ const P = styled.p`
   }
 
   @media (max-width: 500px) {
-    font-size: 0.6rem;
-    margin: 0 0.3rem;
+    font-size: 0.7rem;
+    margin: 0 0.185rem;
   }
 
   @media (min-width: 500px) and (max-width: 720px) {
