@@ -12,6 +12,7 @@ import {
 const Content = styled.div`
   position: fixed;
   z-index: 999;
+  width: 100vw;
 `
 
 const Header = styled.header`
@@ -77,6 +78,17 @@ const P = styled.p`
   &:hover:after {
     width: 100%;
   }
+
+  @media (max-width: 500px) {
+    font-size: 0.6rem;
+    margin: 0 0.3rem;
+  }
+
+  @media (min-width: 500px) and (max-width: 720px) {
+  font-size: 0.8rem;
+  margin: 0 0.5rem;
+  }
+}
 `
 
 const StyledLink = styled(Link)`

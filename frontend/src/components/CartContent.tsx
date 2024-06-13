@@ -2,7 +2,7 @@ import styled from 'styled-components'
 import { useState, useEffect } from 'react'
 
 const Content = styled.div`
-    margin-top: 223px;
+    margin-top: 200px;
     margin-left: 4rem;
     margin-right: 4rem;
     min-height: 80vh;
@@ -10,7 +10,9 @@ const Content = styled.div`
 `
 
 const Items = styled.div`
-    
+    height: 650px;
+    overflow-y: scroll;
+    width: 230px;
 `
 
 const Item = styled.div`
@@ -52,6 +54,10 @@ const Shipping = styled.div`
     flex-direction: column;
     gap: 0.5rem;
     padding: 0.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
 `
 
 const Input = styled.input`
@@ -166,6 +172,7 @@ function CartContent() {
                  <Input type="text" placeholder="Email"></Input>
                  <Input type="text" placeholder="Phone number"></Input>
              </PersonalInformation>
+             <H1>Total {cartItems.reduce((acc, item) => acc + item.price, 0)}</H1>
              <Button>Checkout</Button>
          </Shipping>
          </>
