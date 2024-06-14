@@ -11,11 +11,20 @@ const Content = styled.div`
     margin-right: 4rem;
     display: flex;
     flex-wrap: wrap;
+
+    @media (max-width: 650px) {
+        margin-left: 0;
+        margin-right: 0;
+    }
 `
 
 const IMG = styled.img`
     border: 1px solid black;
     width: 50%;
+
+    @media (max-width: 650px) {
+        width: 50%;
+    }
 `
 
 const Text = styled.div`
@@ -28,15 +37,26 @@ const Text = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    @media (max-width: 650px) {
+        width: 50%;
+    }
 `
 
 const H1 = styled.h1`
-   margin-top: 2rem;
+
+   @media (max-width: 650px) {
+    font-size: 1rem;
+   }
 `
 
 const H2 = styled.h2`
    margin-top: 0.5rem;
    font-size: 1.2rem;
+
+   @media (max-width: 650px) {
+    font-size: 0.8rem;
+   }
 `
 
 const Button = styled.button`
@@ -53,6 +73,13 @@ transition: all 0.3s ease;
 &:hover {
   background-color: white;
   color: black;
+}
+
+@media (max-width: 650px) {
+  font-size: 0.7rem;
+  width: 80px;
+  padding: 3px;
+  margin-top: 0.5rem;
 }
 `
 
