@@ -11,18 +11,34 @@ const FooterContainer = styled.footer`
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
+
+    @media (max-width: 1200px) {
+        flex-direction: column;
+        height: auto;
+        gap: 2rem;
+        padding-bottom: 1.5rem;
+        justify-content: center;
+    }
 `
 
 const H1 = styled.h1`
     font-size: 1.2rem;
     color: white;
     font-weight: normal;
+
+    @media (max-width: 1200px) {
+        margin-top: 1.5rem;
+       }
 `
 
 const Img = styled.img`
     width: 200px;
     position: absolute;
     left: 1rem;
+
+    @media (max-width: 1200px) {
+        display: none;
+    }
 `
 
 const ContanctContainer = styled.div`
