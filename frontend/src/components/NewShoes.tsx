@@ -5,11 +5,19 @@ import { Link, Outlet} from 'react-router-dom'
 const Content = styled.div`
   margin-top: 4rem;
   margin-left: 4rem;
+
+  @media (max-width: 375px) {
+    margin-left: 0;
+  }
 `
 
 const H1 = styled.h1`
   font-size: 2rem;
   color: black;
+
+  @media (max-width: 375px) {
+    text-align: center;
+  }
 `
 
 const H2 = styled.h2`
@@ -34,12 +42,21 @@ const Shoes = styled.div`
   flex-wrap: wrap;
   gap: 1rem;
   width: 100%;
+
+  @media (max-width: 375px) {
+    justify-content: center;
+  }
 `
 
 const Img = styled.img`
   width: 450px;
   height: 450px;
   border: 1px solid black;
+
+  @media (max-width: 1000px) {
+    width: 150px;
+    height: 150px;
+  }
 `
 
 const ShoeItem = styled.div`
@@ -76,7 +93,7 @@ function NewShoes() {
       <Shoes>{products.slice(0, 6).map((product) => 
       <ShoeItem key={product.product_id}>
       <Link to={`/product/${product.product_id}/${product.name}`}>
-      <Img src={product.image_url}></Img>
+      <Img src={product.image_url} alt={product.name}></Img>
       </Link>
       <H2>{product.brand}</H2>
       <H3>{product.name}</H3>

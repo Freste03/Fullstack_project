@@ -38,6 +38,8 @@ const ImgLink = styled.a`
 const IMG = styled.img`
     width: 200px;
     margin-left: 0.5rem;
+
+    
 `
 
 const Svg = styled.svg`
