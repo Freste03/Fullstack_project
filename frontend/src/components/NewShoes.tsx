@@ -6,7 +6,7 @@ const Content = styled.div`
   margin-top: 4rem;
   margin-left: 4rem;
 
-  @media (max-width: 375px) {
+  @media (max-width: 1000px) {
     margin-left: 0;
   }
 `
@@ -15,7 +15,7 @@ const H1 = styled.h1`
   font-size: 2rem;
   color: black;
 
-  @media (max-width: 375px) {
+  @media (max-width: 1000px) {
     text-align: center;
   }
 `
@@ -43,7 +43,7 @@ const Shoes = styled.div`
   gap: 1rem;
   width: 100%;
 
-  @media (max-width: 375px) {
+  @media (max-width: 1000px) {
     justify-content: center;
   }
 `
